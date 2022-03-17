@@ -1,0 +1,67 @@
+name: final_project
+description: Training Final Project
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+  #retrofit: source code generator that uses Dio as an http client
+  retrofit: ^3.0.1+1
+  #dio: http client
+  dio: ^4.0.4
+  #flutter_bloc: state management
+  flutter_bloc: ^8.0.1
+  #equatable: makes comparing dart objects
+  equatable: ^2.0.3
+  #cached_network_image: handle network image loading
+  cached_network_image: ^3.2.0
+  #intl: format date
+  intl: ^0.17.0
+  #json_annotation: to use annotation
+  json_annotation: ^4.4.0
+  #freezed_annotation:  to use annotation
+  freezed_annotation: ^1.1.0
+  #get_it: for injection
+  get_it: ^7.2.0
+  #ionicons: for icons
+  ionicons: ^0.1.2
+  #connectivity_plus: internet connection
+  connectivity_plus: ^2.2.1
+  #shared_preferences:  Local cache
+  shared_preferences: ^0.5.3+4
+  #mockito: mock the data
+  mockito: ^5.1.0
+  #dartz: for handle return type with Either
+  dartz: ^0.10.1
+  #injectable: for injection
+  injectable: ^1.5.3
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  retrofit_generator: ^4.0.0
+  build_runner: ^2.1.8
+  json_serializable: ^6.1.5
+  freezed: ^1.1.1
+  flutter_lints: ^1.0.0
+  injectable_generator: ^1.5.3
+
+flutter:
+
+  uses-material-design: true
+
+  
