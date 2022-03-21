@@ -1,6 +1,6 @@
-import 'package:final_project/core/injector/injector.dart';
-import 'package:final_project/core/style.dart';
-import 'package:final_project/presentation/pages/login/login_screen.dart';
+import 'package:final_project/core/const/style.dart';
+import 'package:final_project/core/di/injector/injector.dart';
+import 'package:final_project/features/auth/presentation/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: appTheme,
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const RegisterScreen(),
     );
   }
 }
