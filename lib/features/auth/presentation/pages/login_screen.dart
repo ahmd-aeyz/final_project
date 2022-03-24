@@ -1,3 +1,4 @@
+import 'package:final_project/core/const/constants.dart';
 import 'package:final_project/core/const/strings.dart';
 import 'package:final_project/core/di/injector/injector.dart';
 import 'package:final_project/core/presentations/widgets/custom_text_form_field.dart';
@@ -17,6 +18,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
+
+  bool _isPasswordShown = false;
   late TextEditingController emailController;
 
   late TextEditingController passwordController;
@@ -83,9 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             inputType: TextInputType.emailAddress,
                             hint: email,
                             validate: (value) {
-                              if (value == null || !value.contains('@')) {
-                                //RegExp('source')
-                                return 'Invalid Email';
+                              if (value != null) {
+                                bool validation = emailRegExp.hasMatch(value);
+                                if (!validation) return 'Invalid Email';
                               }
                               return null;
                             },
@@ -94,17 +97,25 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 20,
                           ),
                           CustomTextFormField(
-                              controller: passwordController,
-                              icon: Icons.lock,
-                              inputType: TextInputType.visiblePassword,
-                              hint: password,
-                              obscureText: true,
-                              validate: (value) {
-                                if (value == null || value.length < 6) {
-                                  return 'Invalid Password';
-                                }
-                                return null;
-                              }),
+                            controller: passwordController,
+                            icon: Icons.lock,
+                            inputType: TextInputType.visiblePassword,
+                            hint: password,
+                            obscureText: !_isPasswordShown,
+                            suffixIcon: _isPasswordShown
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            onSuffixIconPressed: () {
+                              _isPasswordShown = !_isPasswordShown;
+                              setState(() {});
+                            },
+                            validate: (value) {
+                              if (value == null || value.length < 6) {
+                                return 'Invalid Password';
+                              }
+                              return null;
+                            },
+                          ),
                           const SizedBox(
                             height: 8,
                           ),

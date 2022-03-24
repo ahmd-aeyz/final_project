@@ -1,3 +1,4 @@
+import 'package:final_project/core/const/constants.dart';
 import 'package:final_project/core/const/strings.dart';
 import 'package:final_project/core/di/injector/injector.dart';
 import 'package:final_project/core/presentations/widgets/custom_text_form_field.dart';
@@ -17,6 +18,10 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
+
+  bool _isPasswordShown = false;
+  bool _isConfirmPasswordShown = false;
+
   late TextEditingController emailController;
   late TextEditingController nameController;
   late TextEditingController passwordController;
@@ -51,16 +56,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
         create: (context) => getIt<RegisterCubit>(),
         child: BlocConsumer<RegisterCubit, RegisterStates>(
             listener: (context, state) {
-              if (state is RegisterLoadedState) {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-              }
-              if (state is RegisterErrorState) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Register Error')));
-              }
-            }, builder: (context, state) {
+          if (state is RegisterLoadedState) {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()));
+          }
+          if (state is RegisterErrorState) {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: Text('Register Error')));
+          }
+        }, builder: (context, state) {
           var cubit = RegisterCubit.get(context);
           return state.maybeWhen(
             orElse: () {
@@ -78,10 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           Text(
                             register,
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .headline6,
+                            style: Theme.of(context).textTheme.headline6,
                           ),
                           const SizedBox(
                             height: 20,
@@ -108,9 +109,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             inputType: TextInputType.emailAddress,
                             hint: email,
                             validate: (value) {
-                              if (value == null || !value.contains('@')) {
-                                //RegExp('source')
-                                return 'Invalid Email';
+                              if (value != null) {
+                                bool validation = emailRegExp.hasMatch(value);
+                                if (!validation) return 'Invalid Email';
                               }
                               return null;
                             },
@@ -123,7 +124,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               icon: Icons.lock,
                               inputType: TextInputType.visiblePassword,
                               hint: password,
-                              obscureText: true,
+                              obscureText: !_isPasswordShown,
+                              suffixIcon: _isPasswordShown
+                                  ? Icons.visibility_outlined
+                                  : Icons.visibility_off_outlined,
+                              onSuffixIconPressed: () {
+                                _isPasswordShown = !_isPasswordShown;
+                                setState(() {});
+                              },
                               validate: (value) {
                                 if (value == null || value.length < 6) {
                                   return 'Invalid Password';
@@ -138,7 +146,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               icon: Icons.lock,
                               inputType: TextInputType.visiblePassword,
                               hint: confirmPassword,
-                              obscureText: true,
+                              obscureText: !_isConfirmPasswordShown,
+                              suffixIcon: _isConfirmPasswordShown
+                                  ? Icons.visibility_outlined
+                                  : Icons.visibility_off_outlined,
+                              onSuffixIconPressed: () {
+                                _isConfirmPasswordShown =
+                                    !_isConfirmPasswordShown;
+                                setState(() {});
+                              },
                               validate: (value) {
                                 if (value != passwordController.text) {
                                   return 'Password not match';
@@ -154,7 +170,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     builder: (context) => const LoginScreen()));
                               },
                               child:
-                              const Text('Already have account? $login')),
+                                  const Text('Already have account? $login')),
                           SizedBox(
                             width: double.infinity,
                             height: 50,
@@ -166,7 +182,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         email: emailController.text.trim(),
                                         password: passwordController.text,
                                         confirmPassword:
-                                        confirmPasswordController.text);
+                                            confirmPasswordController.text);
                                   }
                                 },
                                 child: const Text(login)),
@@ -178,8 +194,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               );
             },
-            loading: () =>
-            const Center(
+            loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
           );
