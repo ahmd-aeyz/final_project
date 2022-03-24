@@ -11,7 +11,6 @@ class SplashRepoImpl extends SplashRepository {
   Future<Either<Failure, String>> getToken() async {
     final pref = await SharedPreferences.getInstance();
     String? token = pref.getString(tokenKey);
-    //Future.delayed(const Duration(seconds: 3));
     if (token == null) return left(const Failure('Token Null'));
     return right(token);
   }

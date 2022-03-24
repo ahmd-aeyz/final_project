@@ -23,7 +23,7 @@ class JobsRepositoryImpl extends JobsRepository {
       if (kDebugMode) {
         print('Get Jobs start...');
       }
-      if (_token.isRight()) {
+      if (_token != null && _token.isNotEmpty) {
         final jobsModel = await service.getJobs(token: 'Bearer $_token');
         if (kDebugMode) {
           print('Get Job user model $jobsModel');
@@ -57,13 +57,35 @@ class JobsRepositoryImpl extends JobsRepository {
   }
 
   @override
-  Future<Either<Failure, String>> getToken() async {
+  Future<String?> getToken() async {
     final pref = await SharedPreferences.getInstance();
-    String? _token = pref.getString(tokenKey);
-    if (_token != null) {
-      return right(_token);
-    } else {
-      return left(const Failure('Token is Null'));
+    return pref.getString(tokenKey);
+  }
+
+  @override
+  Future<Either<Failure, bool>> apply({required int jobId}) async {
+    final _token = await getToken();
+    final _uId = await getUserId();
+
+    try {
+      if (kDebugMode) {
+        print('Apply start...$_token');
+      }
+      if (_token != null && _uId != null) {
+        final data = ApplySentData(jobId: jobId, userId: _uId);
+        await service.applyForJob(
+          token: 'Bearer $_token',
+          applySentData: data,
+        );
+        return right(true);
+      } else {
+        return left(const Failure('No Token'));
+      }
+    } catch (error) {
+      if (kDebugMode) {
+        print('Apply error $error');
+      }
+      return left(Failure(error.toString()));
     }
   }
 
@@ -72,14 +94,15 @@ class JobsRepositoryImpl extends JobsRepository {
     final _token = await getToken();
     try {
       if (kDebugMode) {
-        print('Logout start...');
+        print('Logout start...$_token');
       }
-      if (_token.isRight()) {
+      if (_token != null && _token.isNotEmpty) {
         final logout = await service.logout(token: 'Bearer $_token');
         if (kDebugMode) {
           print(logout);
         }
         removeToken();
+        removeUserId();
         return right(true);
       } else {
         return left(const Failure('No Token'));
@@ -93,39 +116,20 @@ class JobsRepositoryImpl extends JobsRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> removeToken() async {
+  Future<bool> removeToken() async {
     final pref = await SharedPreferences.getInstance();
-    bool removed = await pref.remove(tokenKey);
-    if (removed) {
-      return right(true);
-    } else {
-      return left(const Failure('can not remove token'));
-    }
+    return await pref.remove(tokenKey);
   }
 
   @override
-  Future<Either<Failure, bool>> apply(ApplySentData data) async {
-    final _token = await getToken();
-    try {
-      if (kDebugMode) {
-        print('Apply start...');
-      }
-      if (_token.isRight()) {
-        final applyRes = await service.applyForJob(
-          token: 'Bearer $_token',
-          applySentData: data,
-        );
-        print('Apply Res $applyRes');
+  Future<bool> removeUserId() async {
+    final pref = await SharedPreferences.getInstance();
+    return await pref.remove(userIdKey);
+  }
 
-        return right(true);
-      } else {
-        return left(const Failure('No Token'));
-      }
-    } catch (error) {
-      if (kDebugMode) {
-        print('Apply error $error');
-      }
-      return left(Failure(error.toString()));
-    }
+  @override
+  Future<int?> getUserId() async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.getInt(userIdKey);
   }
 }

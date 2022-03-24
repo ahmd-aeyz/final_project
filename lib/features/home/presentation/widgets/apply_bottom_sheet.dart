@@ -75,9 +75,8 @@ class ApplyBottomSheet extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  // todo get current user id
                   HomeCubit.get(context)
-                      .apply(jobId: job.id, userId: 1);
+                      .apply(jobId: job.id,);
                 },
                 child: const Text(apply),
               ),

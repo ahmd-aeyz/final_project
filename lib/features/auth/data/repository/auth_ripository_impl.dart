@@ -27,7 +27,8 @@ class AuthRepositoryImpl extends AuthRepository {
       if (kDebugMode) {
         print('login user model $userModel');
       }
-      saveToken(userModel.token);
+      saveToken(token: userModel.token);
+      saveUserId(userId: userModel.user.id);
       return right(_userMapper(userModel));
     } catch (error) {
       if (kDebugMode) {
@@ -47,7 +48,8 @@ class AuthRepositoryImpl extends AuthRepository {
       if (kDebugMode) {
         print('Register user model $userModel');
       }
-      saveToken(userModel.token);
+      saveToken(token: userModel.token);
+      saveUserId(userId: userModel.user.id);
       return right(_userMapper(userModel));
     } catch (error) {
       if (kDebugMode) {
@@ -66,14 +68,14 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<bool> saveToken(String token) async {
+  Future<bool> saveUserId({required int userId}) async {
     final pref = await SharedPreferences.getInstance();
-    return await pref.setString(tokenKey, token);
+    return await pref.setInt(userIdKey, userId);
   }
 
   @override
-  Future<dynamic> getData({required String key}) async {
+  Future<bool> saveToken({required String token}) async {
     final pref = await SharedPreferences.getInstance();
-    return pref.get(key);
+    return await pref.setString(tokenKey, token);
   }
 }

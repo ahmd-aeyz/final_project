@@ -17,8 +17,4 @@ class LoginUseCase extends AppUseCases<User, LoginSentData> {
   Future<Either<Failure, User>> call(LoginSentData params) {
     return repository.login(params);
   }
-
-  Future<String?> get token async {
-    return await repository.getData(key: tokenKey);
-  }
 }

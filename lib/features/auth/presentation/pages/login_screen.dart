@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.white,
       ),
       body: BlocProvider(
-        create: (context) => getIt<LoginCubit>()..checkToken(),
+        create: (context) => getIt<LoginCubit>(),
         child:
             BlocConsumer<LoginCubit, LoginStates>(listener: (context, state) {
           if (state is LoginLoadedState) {

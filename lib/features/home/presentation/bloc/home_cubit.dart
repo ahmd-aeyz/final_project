@@ -1,5 +1,4 @@
 import 'package:final_project/core/app_case/app_use_cases.dart';
-import 'package:final_project/features/home/data/services/remote/apply_sent_data.dart';
 import 'package:final_project/features/home/domain/entities/job.dart';
 import 'package:final_project/features/home/domain/use_case/apply_use_case.dart';
 import 'package:final_project/features/home/domain/use_case/jobs_use_case.dart';
@@ -35,7 +34,23 @@ class HomeCubit extends Cubit<HomeStates> {
     }));
   }
 
-  void logout() async {
+  Future<void> apply({
+    required int jobId,
+  }) async {
+    emit(const ApplyLoadingState());
+    final result = await _applyUseCase.call(jobId);
+
+    emit(result.fold((error) {
+      if (kDebugMode) {
+        print(error.type);
+      }
+      return ApplyErrorState(error: error.type);
+    }, (done) {
+      return const ApplyLoadedState();
+    }));
+  }
+
+  Future<void> logout() async {
     emit(const LogoutLoadingState());
     final result = await _logoutUseCase.call(NoParams());
     emit(result.fold((error) {
@@ -45,24 +60,6 @@ class HomeCubit extends Cubit<HomeStates> {
       return LogoutErrorState(error: error.type);
     }, (done) {
       return const LogoutLoadedState();
-    }));
-  }
-
-  Future<void> apply({
-    required int jobId,
-    required int userId,
-  }) async {
-    emit(const ApplyLoadingState());
-    final data = ApplySentData(jobId: jobId, userId: userId);
-    final result = await _applyUseCase.call(data);
-
-    emit(result.fold((error) {
-      if (kDebugMode) {
-        print(error.type);
-      }
-      return ApplyErrorState(error: error.type);
-    }, (done) {
-      return const ApplyLoadedState();
     }));
   }
 }
