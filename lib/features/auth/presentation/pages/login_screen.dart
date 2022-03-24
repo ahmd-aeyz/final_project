@@ -43,15 +43,19 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.white,
       ),
       body: BlocProvider(
-        create: (context) => getIt<LoginCubit>(),
+        create: (context) => getIt<LoginCubit>()..checkToken(),
         child:
             BlocConsumer<LoginCubit, LoginStates>(listener: (context, state) {
           if (state is LoginLoadedState) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => const HomeScreen()));
           }
+          if (state is LoginErrorState) {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: Text('Login Error')));
+          }
         }, builder: (context, state) {
-          var cubit = getIt<LoginCubit>();
+          var cubit = LoginCubit.get(context);
           return state.maybeWhen(
             orElse: () {
               return SingleChildScrollView(
@@ -106,11 +110,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                                    builder: (context) =>
-                                        const RegisterScreen()));
+                                Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const RegisterScreen()));
                               },
-                              child: const Text('Create new account $register')),
+                              child:
+                                  const Text('Create new account $register')),
                           SizedBox(
                             width: double.infinity,
                             height: 50,
@@ -133,9 +139,6 @@ class _LoginScreenState extends State<LoginScreen> {
             },
             loading: () => const Center(
               child: CircularProgressIndicator(),
-            ),
-            error: (error) => const Center(
-              child: Text('Login Error'),
             ),
           );
         }),

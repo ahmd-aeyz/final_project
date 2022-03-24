@@ -25,4 +25,10 @@ class LoginCubit extends Cubit<LoginStates> {
     emit(result.fold((error) => LoginErrorState(error: error.type),
         (user) => const LoginLoadedState()));
   }
+
+  void checkToken() async {
+    (await _useCase.token) == null
+        ? emit(const LoginInitialState())
+        : emit(const LoginLoadedState());
+  }
 }

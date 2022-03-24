@@ -23,7 +23,6 @@ class RegisterCubit extends Cubit<RegisterStates> {
     final registerData = RegisterSentData(
       name: name,
       email: email,
-      phone: phone ?? '',
       password: password,
       passwordConfirmation: confirmPassword,
     );

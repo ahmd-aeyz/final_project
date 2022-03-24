@@ -8,4 +8,8 @@ abstract class AuthRepository {
   Future<Either<Failure, User>> register(RegisterSentData data);
 
   Future<Either<Failure, User>> login(LoginSentData data);
+
+  Future<bool> saveToken(String token);
+
+  Future<dynamic> getData({required String key});
 }

@@ -1,3 +1,4 @@
+import 'package:final_project/features/auth/domain/entities/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'register_states.freezed.dart';

@@ -42,13 +42,14 @@ dependencies:
   #connectivity_plus: internet connection
   connectivity_plus: ^2.2.1
   #shared_preferences:  Local cache
-  shared_preferences: ^0.5.3+4
+  shared_preferences: ^2.0.13
   #mockito: mock the data
   mockito: ^5.1.0
   #dartz: for handle return type with Either
   dartz: ^0.10.1
   #injectable: for injection
   injectable: ^1.5.3
+  provider: ^6.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,4 +65,5 @@ flutter:
 
   uses-material-design: true
 
-  
+  assets:
+    - assets/images/

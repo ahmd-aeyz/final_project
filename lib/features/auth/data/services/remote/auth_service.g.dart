@@ -9,9 +9,7 @@ part of 'auth_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _AuthService implements AuthService {
-  _AuthService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://0244-41-38-218-113.ngrok.io/api';
-  }
+  _AuthService(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
@@ -27,7 +25,7 @@ class _AuthService implements AuthService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<UserModel>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/register',
+                .compose(_dio.options, 'register',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = UserModel.fromJson(_result.data!);
@@ -44,7 +42,7 @@ class _AuthService implements AuthService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<UserModel>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/login',
+                .compose(_dio.options, 'login',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = UserModel.fromJson(_result.data!);

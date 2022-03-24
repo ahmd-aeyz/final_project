@@ -2,10 +2,10 @@ import 'package:final_project/core/helpers/helpers.dart';
 import 'package:final_project/features/home/domain/entities/job.dart';
 import 'package:flutter/material.dart';
 
-class JobListItem extends StatelessWidget {
-  const JobListItem({Key? key, required this.model, required this.onTap})
+class JobItem extends StatelessWidget {
+  const JobItem({Key? key, required this.job, required this.onTap})
       : super(key: key);
-  final Job model;
+  final Job job;
   final VoidCallback onTap;
 
   @override
@@ -24,7 +24,7 @@ class JobListItem extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.deepOrangeAccent),
-              child: Center(child: Text('${model.id}')),
+              child: Center(child: Text('${job.id}')),
             ),
             const SizedBox(
               width: 16,
@@ -34,7 +34,7 @@ class JobListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  model.name,
+                  job.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontWeight: FontWeight.bold),
@@ -42,7 +42,7 @@ class JobListItem extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                if (model.publishedDate == 'No Date')
+                if (job.publishedDate == 'No Date')
                   const Text(
                     'No Date',
                     style: TextStyle(color: Colors.grey),
@@ -51,14 +51,14 @@ class JobListItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        formatTime(dateTime: model.publishedDate),
+                        formatTime(dateTime: job.publishedDate),
                         style: const TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(
                         width: 4,
                       ),
                       Text(
-                        formatDate(dateTime: model.publishedDate),
+                        formatDate(dateTime: job.publishedDate),
                         style: const TextStyle(color: Colors.grey),
                       ),
                     ],

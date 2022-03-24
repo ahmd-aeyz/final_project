@@ -6,12 +6,12 @@ part 'register_sent_data.g.dart';
 
 @freezed
 class RegisterSentData with _$RegisterSentData {
+
   factory RegisterSentData({
-    required String name,
-    required String email,
-    required String password,
-    required String passwordConfirmation,
-    String? phone,
+    @JsonKey(name: 'name') required String name,
+    @JsonKey(name: 'email') required String email,
+    @JsonKey(name: 'password') required String password,
+    @JsonKey(name: 'password_confirmation') required String passwordConfirmation,
   }) = _RegisterSentData;
 
   factory RegisterSentData.fromJson(Map<String, dynamic> json) =>

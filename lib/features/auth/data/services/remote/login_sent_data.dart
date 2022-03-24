@@ -7,8 +7,8 @@ part 'login_sent_data.g.dart';
 @freezed
 class LoginSentData with _$LoginSentData {
   factory LoginSentData({
-    required String email,
-    required String password,
+    @JsonKey(name: 'email') required String email,
+    @JsonKey(name: 'password') required String password,
   }) = _LoginSentData;
 
   factory LoginSentData.fromJson(Map<String, dynamic> json) =>

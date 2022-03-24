@@ -22,7 +22,9 @@ LoginSentData _$LoginSentDataFromJson(Map<String, dynamic> json) {
 class _$LoginSentDataTearOff {
   const _$LoginSentDataTearOff();
 
-  _LoginSentData call({required String email, required String password}) {
+  _LoginSentData call(
+      {@JsonKey(name: 'email') required String email,
+      @JsonKey(name: 'password') required String password}) {
     return _LoginSentData(
       email: email,
       password: password,
@@ -39,7 +41,9 @@ const $LoginSentData = _$LoginSentDataTearOff();
 
 /// @nodoc
 mixin _$LoginSentData {
+  @JsonKey(name: 'email')
   String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'password')
   String get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,7 +57,9 @@ abstract class $LoginSentDataCopyWith<$Res> {
   factory $LoginSentDataCopyWith(
           LoginSentData value, $Res Function(LoginSentData) then) =
       _$LoginSentDataCopyWithImpl<$Res>;
-  $Res call({String email, String password});
+  $Res call(
+      {@JsonKey(name: 'email') String email,
+      @JsonKey(name: 'password') String password});
 }
 
 /// @nodoc
@@ -90,7 +96,9 @@ abstract class _$LoginSentDataCopyWith<$Res>
           _LoginSentData value, $Res Function(_LoginSentData) then) =
       __$LoginSentDataCopyWithImpl<$Res>;
   @override
-  $Res call({String email, String password});
+  $Res call(
+      {@JsonKey(name: 'email') String email,
+      @JsonKey(name: 'password') String password});
 }
 
 /// @nodoc
@@ -125,14 +133,18 @@ class __$LoginSentDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_LoginSentData implements _LoginSentData {
-  _$_LoginSentData({required this.email, required this.password});
+  _$_LoginSentData(
+      {@JsonKey(name: 'email') required this.email,
+      @JsonKey(name: 'password') required this.password});
 
   factory _$_LoginSentData.fromJson(Map<String, dynamic> json) =>
       _$$_LoginSentDataFromJson(json);
 
   @override
+  @JsonKey(name: 'email')
   final String email;
   @override
+  @JsonKey(name: 'password')
   final String password;
 
   @override
@@ -167,15 +179,18 @@ class _$_LoginSentData implements _LoginSentData {
 }
 
 abstract class _LoginSentData implements LoginSentData {
-  factory _LoginSentData({required String email, required String password}) =
-      _$_LoginSentData;
+  factory _LoginSentData(
+      {@JsonKey(name: 'email') required String email,
+      @JsonKey(name: 'password') required String password}) = _$_LoginSentData;
 
   factory _LoginSentData.fromJson(Map<String, dynamic> json) =
       _$_LoginSentData.fromJson;
 
   @override
+  @JsonKey(name: 'email')
   String get email;
   @override
+  @JsonKey(name: 'password')
   String get password;
   @override
   @JsonKey(ignore: true)

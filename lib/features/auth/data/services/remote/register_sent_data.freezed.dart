@@ -23,17 +23,19 @@ class _$RegisterSentDataTearOff {
   const _$RegisterSentDataTearOff();
 
   _RegisterSentData call(
-      {required String name,
-      required String email,
-      required String password,
-      required String passwordConfirmation,
-      String? phone}) {
+      {@JsonKey(name: 'name')
+          required String name,
+      @JsonKey(name: 'email')
+          required String email,
+      @JsonKey(name: 'password')
+          required String password,
+      @JsonKey(name: 'password_confirmation')
+          required String passwordConfirmation}) {
     return _RegisterSentData(
       name: name,
       email: email,
       password: password,
       passwordConfirmation: passwordConfirmation,
-      phone: phone,
     );
   }
 
@@ -47,11 +49,14 @@ const $RegisterSentData = _$RegisterSentDataTearOff();
 
 /// @nodoc
 mixin _$RegisterSentData {
+  @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email')
   String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'password')
   String get password => throw _privateConstructorUsedError;
+  @JsonKey(name: 'password_confirmation')
   String get passwordConfirmation => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,11 +70,10 @@ abstract class $RegisterSentDataCopyWith<$Res> {
           RegisterSentData value, $Res Function(RegisterSentData) then) =
       _$RegisterSentDataCopyWithImpl<$Res>;
   $Res call(
-      {String name,
-      String email,
-      String password,
-      String passwordConfirmation,
-      String? phone});
+      {@JsonKey(name: 'name') String name,
+      @JsonKey(name: 'email') String email,
+      @JsonKey(name: 'password') String password,
+      @JsonKey(name: 'password_confirmation') String passwordConfirmation});
 }
 
 /// @nodoc
@@ -87,7 +91,6 @@ class _$RegisterSentDataCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? passwordConfirmation = freezed,
-    Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -106,10 +109,6 @@ class _$RegisterSentDataCopyWithImpl<$Res>
           ? _value.passwordConfirmation
           : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: phone == freezed
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -122,11 +121,10 @@ abstract class _$RegisterSentDataCopyWith<$Res>
       __$RegisterSentDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
-      String email,
-      String password,
-      String passwordConfirmation,
-      String? phone});
+      {@JsonKey(name: 'name') String name,
+      @JsonKey(name: 'email') String email,
+      @JsonKey(name: 'password') String password,
+      @JsonKey(name: 'password_confirmation') String passwordConfirmation});
 }
 
 /// @nodoc
@@ -146,7 +144,6 @@ class __$RegisterSentDataCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? passwordConfirmation = freezed,
-    Object? phone = freezed,
   }) {
     return _then(_RegisterSentData(
       name: name == freezed
@@ -165,10 +162,6 @@ class __$RegisterSentDataCopyWithImpl<$Res>
           ? _value.passwordConfirmation
           : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: phone == freezed
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -177,29 +170,34 @@ class __$RegisterSentDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RegisterSentData implements _RegisterSentData {
   _$_RegisterSentData(
-      {required this.name,
-      required this.email,
-      required this.password,
-      required this.passwordConfirmation,
-      this.phone});
+      {@JsonKey(name: 'name')
+          required this.name,
+      @JsonKey(name: 'email')
+          required this.email,
+      @JsonKey(name: 'password')
+          required this.password,
+      @JsonKey(name: 'password_confirmation')
+          required this.passwordConfirmation});
 
   factory _$_RegisterSentData.fromJson(Map<String, dynamic> json) =>
       _$$_RegisterSentDataFromJson(json);
 
   @override
+  @JsonKey(name: 'name')
   final String name;
   @override
+  @JsonKey(name: 'email')
   final String email;
   @override
+  @JsonKey(name: 'password')
   final String password;
   @override
+  @JsonKey(name: 'password_confirmation')
   final String passwordConfirmation;
-  @override
-  final String? phone;
 
   @override
   String toString() {
-    return 'RegisterSentData(name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone)';
+    return 'RegisterSentData(name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation)';
   }
 
   @override
@@ -211,8 +209,7 @@ class _$_RegisterSentData implements _RegisterSentData {
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality()
-                .equals(other.passwordConfirmation, passwordConfirmation) &&
-            const DeepCollectionEquality().equals(other.phone, phone));
+                .equals(other.passwordConfirmation, passwordConfirmation));
   }
 
   @override
@@ -221,8 +218,7 @@ class _$_RegisterSentData implements _RegisterSentData {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(passwordConfirmation),
-      const DeepCollectionEquality().hash(phone));
+      const DeepCollectionEquality().hash(passwordConfirmation));
 
   @JsonKey(ignore: true)
   @override
@@ -237,25 +233,30 @@ class _$_RegisterSentData implements _RegisterSentData {
 
 abstract class _RegisterSentData implements RegisterSentData {
   factory _RegisterSentData(
-      {required String name,
-      required String email,
-      required String password,
-      required String passwordConfirmation,
-      String? phone}) = _$_RegisterSentData;
+      {@JsonKey(name: 'name')
+          required String name,
+      @JsonKey(name: 'email')
+          required String email,
+      @JsonKey(name: 'password')
+          required String password,
+      @JsonKey(name: 'password_confirmation')
+          required String passwordConfirmation}) = _$_RegisterSentData;
 
   factory _RegisterSentData.fromJson(Map<String, dynamic> json) =
       _$_RegisterSentData.fromJson;
 
   @override
+  @JsonKey(name: 'name')
   String get name;
   @override
+  @JsonKey(name: 'email')
   String get email;
   @override
+  @JsonKey(name: 'password')
   String get password;
   @override
+  @JsonKey(name: 'password_confirmation')
   String get passwordConfirmation;
-  @override
-  String? get phone;
   @override
   @JsonKey(ignore: true)
   _$RegisterSentDataCopyWith<_RegisterSentData> get copyWith =>

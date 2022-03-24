@@ -216,14 +216,12 @@ class _$UserModelDataTearOff {
   _UserModelData call(
       {@JsonKey(name: 'name') required String name,
       @JsonKey(name: 'email') required String email,
-      @JsonKey(name: 'phone') required String phone,
       @JsonKey(name: 'updated_at') required String updatedAt,
       @JsonKey(name: 'created_at') required String createdAt,
       @JsonKey(name: 'id') required int id}) {
     return _UserModelData(
       name: name,
       email: email,
-      phone: phone,
       updatedAt: updatedAt,
       createdAt: createdAt,
       id: id,
@@ -244,8 +242,6 @@ mixin _$UserModelData {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'email')
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'phone')
-  String get phone => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
   String get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
@@ -267,7 +263,6 @@ abstract class $UserModelDataCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'email') String email,
-      @JsonKey(name: 'phone') String phone,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'id') int id});
@@ -286,7 +281,6 @@ class _$UserModelDataCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? email = freezed,
-    Object? phone = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
@@ -299,10 +293,6 @@ class _$UserModelDataCopyWithImpl<$Res>
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: phone == freezed
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
@@ -330,7 +320,6 @@ abstract class _$UserModelDataCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'email') String email,
-      @JsonKey(name: 'phone') String phone,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'id') int id});
@@ -351,7 +340,6 @@ class __$UserModelDataCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? email = freezed,
-    Object? phone = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = freezed,
     Object? id = freezed,
@@ -364,10 +352,6 @@ class __$UserModelDataCopyWithImpl<$Res>
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: phone == freezed
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
@@ -391,7 +375,6 @@ class _$_UserModelData implements _UserModelData {
   _$_UserModelData(
       {@JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'email') required this.email,
-      @JsonKey(name: 'phone') required this.phone,
       @JsonKey(name: 'updated_at') required this.updatedAt,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'id') required this.id});
@@ -406,9 +389,6 @@ class _$_UserModelData implements _UserModelData {
   @JsonKey(name: 'email')
   final String email;
   @override
-  @JsonKey(name: 'phone')
-  final String phone;
-  @override
   @JsonKey(name: 'updated_at')
   final String updatedAt;
   @override
@@ -420,7 +400,7 @@ class _$_UserModelData implements _UserModelData {
 
   @override
   String toString() {
-    return 'UserModelData(name: $name, email: $email, phone: $phone, updatedAt: $updatedAt, createdAt: $createdAt, id: $id)';
+    return 'UserModelData(name: $name, email: $email, updatedAt: $updatedAt, createdAt: $createdAt, id: $id)';
   }
 
   @override
@@ -430,7 +410,6 @@ class _$_UserModelData implements _UserModelData {
             other is _UserModelData &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.phone, phone) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
             const DeepCollectionEquality().equals(other.id, id));
@@ -441,7 +420,6 @@ class _$_UserModelData implements _UserModelData {
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(phone),
       const DeepCollectionEquality().hash(updatedAt),
       const DeepCollectionEquality().hash(createdAt),
       const DeepCollectionEquality().hash(id));
@@ -461,7 +439,6 @@ abstract class _UserModelData implements UserModelData {
   factory _UserModelData(
       {@JsonKey(name: 'name') required String name,
       @JsonKey(name: 'email') required String email,
-      @JsonKey(name: 'phone') required String phone,
       @JsonKey(name: 'updated_at') required String updatedAt,
       @JsonKey(name: 'created_at') required String createdAt,
       @JsonKey(name: 'id') required int id}) = _$_UserModelData;
@@ -475,9 +452,6 @@ abstract class _UserModelData implements UserModelData {
   @override
   @JsonKey(name: 'email')
   String get email;
-  @override
-  @JsonKey(name: 'phone')
-  String get phone;
   @override
   @JsonKey(name: 'updated_at')
   String get updatedAt;

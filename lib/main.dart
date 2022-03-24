@@ -1,11 +1,14 @@
 import 'package:final_project/core/const/style.dart';
 import 'package:final_project/core/di/injector/injector.dart';
-import 'package:final_project/features/auth/presentation/pages/register_screen.dart';
+import 'package:final_project/features/home/presentation/bloc/home_cubit.dart';
+import 'package:final_project/features/splash/presentation/bloc/splash_cubit.dart';
+import 'package:final_project/features/splash/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
+  await configureDependencies();
   runApp(const MyApp());
 }
 
@@ -14,10 +17,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: appTheme,
-      debugShowCheckedModeBanner: false,
-      home: const RegisterScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          lazy: false,
+          create: (context) => getIt<SplashCubit>()..goToHomePAge(),),
+        BlocProvider(create: (context) => getIt<HomeCubit>()..getJobs()),
+      ],
+      child: MaterialApp(
+        theme: appTheme,
+        debugShowCheckedModeBanner: false,
+        home: const SplashScreen(),
+      ),
     );
   }
 }

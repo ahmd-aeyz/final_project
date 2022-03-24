@@ -11,8 +11,7 @@ _$_RegisterSentData _$$_RegisterSentDataFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       email: json['email'] as String,
       password: json['password'] as String,
-      passwordConfirmation: json['passwordConfirmation'] as String,
-      phone: json['phone'] as String?,
+      passwordConfirmation: json['password_confirmation'] as String,
     );
 
 Map<String, dynamic> _$$_RegisterSentDataToJson(_$_RegisterSentData instance) =>
@@ -20,6 +19,5 @@ Map<String, dynamic> _$$_RegisterSentDataToJson(_$_RegisterSentData instance) =>
       'name': instance.name,
       'email': instance.email,
       'password': instance.password,
-      'passwordConfirmation': instance.passwordConfirmation,
-      'phone': instance.phone,
+      'password_confirmation': instance.passwordConfirmation,
     };
