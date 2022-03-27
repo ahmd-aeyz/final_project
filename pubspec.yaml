@@ -27,8 +27,6 @@ dependencies:
   flutter_bloc: ^8.0.1
   #equatable: makes comparing dart objects
   equatable: ^2.0.3
-  #cached_network_image: handle network image loading
-  cached_network_image: ^3.2.0
   #intl: format date
   intl: ^0.17.0
   #json_annotation: to use annotation
@@ -37,19 +35,17 @@ dependencies:
   freezed_annotation: ^1.1.0
   #get_it: for injection
   get_it: ^7.2.0
-  #ionicons: for icons
-  ionicons: ^0.1.2
   #connectivity_plus: internet connection
   connectivity_plus: ^2.2.1
   #shared_preferences:  Local cache
   shared_preferences: ^2.0.13
-  #mockito: mock the data
-  mockito: ^5.1.0
   #dartz: for handle return type with Either
   dartz: ^0.10.1
   #injectable: for injection
   injectable: ^1.5.3
+  #flutter_native_splash: for using native splash screen
   flutter_native_splash: ^2.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
