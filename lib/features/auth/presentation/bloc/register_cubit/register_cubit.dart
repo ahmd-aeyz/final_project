@@ -1,4 +1,4 @@
-import 'package:final_project/features/auth/data/services/remote/register_sent_data.dart';
+import 'package:final_project/features/auth/domain/entities/register.dart';
 import 'package:final_project/features/auth/domain/use_case/register_use_case.dart';
 import 'package:final_project/features/auth/presentation/bloc/register_cubit/register_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,13 +20,13 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required String confirmPassword,
   }) async {
     emit(const RegisterLoadingState());
-    final registerData = RegisterSentData(
+    final register = Register(
       name: name,
       email: email,
       password: password,
       passwordConfirmation: confirmPassword,
     );
-    final result = await _useCase.call(registerData);
+    final result = await _useCase.call(register);
     emit(result.fold((error) => RegisterErrorState(error: error.type),
         (user) => const RegisterLoadedState()));
   }

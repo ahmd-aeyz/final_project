@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:final_project/core/const/strings.dart';
 import 'package:final_project/core/error/failure.dart';
-import 'package:final_project/features/home/data/models/jobs_model.dart';
-import 'package:final_project/features/home/data/services/remote/apply_sent_data.dart';
+import 'package:final_project/features/home/data/models/apply/apply_sent_data.dart';
+import 'package:final_project/features/home/data/models/jobs/jobs_model.dart';
 import 'package:final_project/features/home/data/services/remote/jobs_service.dart';
 import 'package:final_project/features/home/domain/entities/job.dart';
 import 'package:final_project/features/home/domain/repository/jobs_repository.dart';

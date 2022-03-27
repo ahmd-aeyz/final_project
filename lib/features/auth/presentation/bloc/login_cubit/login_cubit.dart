@@ -1,4 +1,4 @@
-import 'package:final_project/features/auth/data/services/remote/login_sent_data.dart';
+import 'package:final_project/features/auth/domain/entities/login.dart';
 import 'package:final_project/features/auth/domain/use_case/login_use_case.dart';
 import 'package:final_project/features/auth/presentation/bloc/login_cubit/login_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<LoginStates> {
     required String password,
   }) async {
     emit(const LoginLoadingState());
-    final loginData = LoginSentData(
+    final loginData = Login(
       email: email,
       password: password,
     );

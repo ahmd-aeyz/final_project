@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:final_project/core/const/strings.dart';
-import 'package:final_project/features/home/data/models/jobs_model.dart';
-import 'package:final_project/features/home/data/services/remote/apply_sent_data.dart';
+import 'package:final_project/features/home/data/models/apply/apply_sent_data.dart';
+import 'package:final_project/features/home/data/models/jobs/jobs_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
