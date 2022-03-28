@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:final_project/core/const/strings.dart';
 import 'package:final_project/core/error/failure.dart';
-import 'package:final_project/features/splash/domain/repository/splash_repository.dart';
+import 'package:final_project/features/startup/domain/repository/startup_repository.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-@Injectable(as: SplashRepository)
-class SplashRepoImpl extends SplashRepository {
+@Injectable(as: StartupRepository)
+class StartupRepoImpl extends StartupRepository {
   @override
   Future<Either<Failure, String>> getToken() async {
     final pref = await SharedPreferences.getInstance();

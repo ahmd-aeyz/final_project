@@ -32,12 +32,13 @@ import '../../../features/home/presentation/bloc/apply_cubit/apply_cubit.dart'
     as _i22;
 import '../../../features/home/presentation/bloc/home_cubit/home_cubit.dart'
     as _i18;
-import '../../../features/splash/data/repository/splash_repo_impl.dart' as _i7;
-import '../../../features/splash/domain/repository/splash_repository.dart'
+import '../../../features/startup/data/repository/startup_repo_impl.dart'
+    as _i7;
+import '../../../features/startup/domain/repository/startup_repository.dart'
     as _i6;
-import '../../../features/splash/domain/use_case/check_token_use_case.dart'
+import '../../../features/startup/domain/use_case/check_token_use_case.dart'
     as _i9;
-import '../../../features/splash/presentation/bloc/splash_cubit.dart' as _i14;
+import '../../../features/startup/presentation/bloc/startup_cubit.dart' as _i14;
 import '../cache_init/cache_init.dart' as _i26;
 import '../dio_init/dio_init.dart'
     as _i25; // ignore_for_file: unnecessary_lambdas
@@ -53,18 +54,18 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.singleton<_i4.JobsService>(_i4.JobsService(get<_i3.Dio>()));
   await gh.factoryAsync<_i5.SharedPreferences>(() => cacheInit.cacheInit,
       preResolve: true);
-  gh.factory<_i6.SplashRepository>(() => _i7.SplashRepoImpl());
+  gh.factory<_i6.StartupRepository>(() => _i7.StartupRepoImpl());
   gh.singleton<_i8.AuthService>(_i8.AuthService(get<_i3.Dio>()));
   gh.factory<_i9.CheckTokenUseCase>(
-      () => _i9.CheckTokenUseCase(get<_i6.SplashRepository>()));
+      () => _i9.CheckTokenUseCase(get<_i6.StartupRepository>()));
   gh.factory<_i10.JobsRepository>(
       () => _i11.JobsRepositoryImpl(get<_i4.JobsService>()));
   gh.factory<_i12.JobsUseCase>(
       () => _i12.JobsUseCase(get<_i10.JobsRepository>()));
   gh.factory<_i13.LogoutUseCase>(
       () => _i13.LogoutUseCase(get<_i10.JobsRepository>()));
-  gh.factory<_i14.SplashCubit>(
-      () => _i14.SplashCubit(get<_i9.CheckTokenUseCase>()));
+  gh.factory<_i14.StartupCubit>(
+      () => _i14.StartupCubit(get<_i9.CheckTokenUseCase>()));
   gh.factory<_i15.ApplyUseCase>(
       () => _i15.ApplyUseCase(get<_i10.JobsRepository>()));
   gh.factory<_i16.AuthRepository>(

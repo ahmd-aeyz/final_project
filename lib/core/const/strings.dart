@@ -8,7 +8,7 @@ const String password = 'Password';
 const String confirmPassword = 'Confirm Password';
 
 // remote
-const String baseUrl = 'http://6cf4-154-180-84-54.ngrok.io/api/';
+const String baseUrl = 'https://0a20-154-180-84-54.ngrok.io/api/';
 const String loginEndPoint = 'login';
 const String registerEndPoint = 'register';
 const String jobsEndPoint = 'jobs';

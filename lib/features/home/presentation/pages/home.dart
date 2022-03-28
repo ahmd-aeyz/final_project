@@ -1,3 +1,4 @@
+import 'package:final_project/core/di/injector/injector.dart';
 import 'package:final_project/core/presentations/widgets/custom_loading_indicator.dart';
 import 'package:final_project/features/auth/presentation/bloc/logout_cubit/logout_cubit.dart';
 import 'package:final_project/features/auth/presentation/bloc/logout_cubit/logout_states.dart';
@@ -22,26 +23,30 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           actions: [
-            BlocConsumer<LogoutCubit, LogoutStates>(listener: (context, state) {
-              if (state is LogoutLoadedState) {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const LoginScreen()));
-              }
-              if (state is LogoutErrorState) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Logout Error')));
-              }
-            }, builder: (context, state) {
-              return state.maybeWhen(
-                  orElse: () => IconButton(
-                      onPressed: () {
-                        BlocProvider.of<LogoutCubit>(context).logout();
-                      },
-                      icon: const Icon(
-                        Icons.logout_outlined,
-                        color: Colors.grey,
-                      )));
-            }),
+            BlocProvider(
+              create: (context) => getIt<LogoutCubit>(),
+              child: BlocConsumer<LogoutCubit, LogoutStates>(
+                  listener: (context, state) {
+                if (state is LogoutLoadedState) {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const LoginScreen()));
+                }
+                if (state is LogoutErrorState) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Logout Error')));
+                }
+              }, builder: (context, state) {
+                return state.maybeWhen(
+                    orElse: () => IconButton(
+                        onPressed: () {
+                          BlocProvider.of<LogoutCubit>(context).logout();
+                        },
+                        icon: const Icon(
+                          Icons.logout_outlined,
+                          color: Colors.grey,
+                        )));
+              }),
+            ),
           ],
           backgroundColor: Colors.white,
         ),

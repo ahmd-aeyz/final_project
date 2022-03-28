@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'splash_states.dart';
+part of 'startup_states.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,33 +15,33 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$SplashStatesTearOff {
-  const _$SplashStatesTearOff();
+class _$StartupStatesTearOff {
+  const _$StartupStatesTearOff();
 
-  SplashInitialState initial() {
-    return const SplashInitialState();
+  StartupInitialState initial() {
+    return const StartupInitialState();
   }
 
-  SplashLoadingState loading() {
-    return const SplashLoadingState();
+  StartupLoadingState loading() {
+    return const StartupLoadingState();
   }
 
-  SplashLoadedState loaded() {
-    return const SplashLoadedState();
+  StartupLoadedState loaded() {
+    return const StartupLoadedState();
   }
 
-  SplashErrorState error({required String error}) {
-    return SplashErrorState(
+  StartupErrorState error({required String error}) {
+    return StartupErrorState(
       error: error,
     );
   }
 }
 
 /// @nodoc
-const $SplashStates = _$SplashStatesTearOff();
+const $StartupStates = _$StartupStatesTearOff();
 
 /// @nodoc
-mixin _$SplashStates {
+mixin _$StartupStates {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,80 +69,81 @@ mixin _$SplashStates {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashInitialState value) initial,
-    required TResult Function(SplashLoadingState value) loading,
-    required TResult Function(SplashLoadedState value) loaded,
-    required TResult Function(SplashErrorState value) error,
+    required TResult Function(StartupInitialState value) initial,
+    required TResult Function(StartupLoadingState value) loading,
+    required TResult Function(StartupLoadedState value) loaded,
+    required TResult Function(StartupErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SplashStatesCopyWith<$Res> {
-  factory $SplashStatesCopyWith(
-          SplashStates value, $Res Function(SplashStates) then) =
-      _$SplashStatesCopyWithImpl<$Res>;
+abstract class $StartupStatesCopyWith<$Res> {
+  factory $StartupStatesCopyWith(
+          StartupStates value, $Res Function(StartupStates) then) =
+      _$StartupStatesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SplashStatesCopyWithImpl<$Res> implements $SplashStatesCopyWith<$Res> {
-  _$SplashStatesCopyWithImpl(this._value, this._then);
+class _$StartupStatesCopyWithImpl<$Res>
+    implements $StartupStatesCopyWith<$Res> {
+  _$StartupStatesCopyWithImpl(this._value, this._then);
 
-  final SplashStates _value;
+  final StartupStates _value;
   // ignore: unused_field
-  final $Res Function(SplashStates) _then;
+  final $Res Function(StartupStates) _then;
 }
 
 /// @nodoc
-abstract class $SplashInitialStateCopyWith<$Res> {
-  factory $SplashInitialStateCopyWith(
-          SplashInitialState value, $Res Function(SplashInitialState) then) =
-      _$SplashInitialStateCopyWithImpl<$Res>;
+abstract class $StartupInitialStateCopyWith<$Res> {
+  factory $StartupInitialStateCopyWith(
+          StartupInitialState value, $Res Function(StartupInitialState) then) =
+      _$StartupInitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SplashInitialStateCopyWithImpl<$Res>
-    extends _$SplashStatesCopyWithImpl<$Res>
-    implements $SplashInitialStateCopyWith<$Res> {
-  _$SplashInitialStateCopyWithImpl(
-      SplashInitialState _value, $Res Function(SplashInitialState) _then)
-      : super(_value, (v) => _then(v as SplashInitialState));
+class _$StartupInitialStateCopyWithImpl<$Res>
+    extends _$StartupStatesCopyWithImpl<$Res>
+    implements $StartupInitialStateCopyWith<$Res> {
+  _$StartupInitialStateCopyWithImpl(
+      StartupInitialState _value, $Res Function(StartupInitialState) _then)
+      : super(_value, (v) => _then(v as StartupInitialState));
 
   @override
-  SplashInitialState get _value => super._value as SplashInitialState;
+  StartupInitialState get _value => super._value as StartupInitialState;
 }
 
 /// @nodoc
 
-class _$SplashInitialState implements SplashInitialState {
-  const _$SplashInitialState();
+class _$StartupInitialState implements StartupInitialState {
+  const _$StartupInitialState();
 
   @override
   String toString() {
-    return 'SplashStates.initial()';
+    return 'StartupStates.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SplashInitialState);
+        (other.runtimeType == runtimeType && other is StartupInitialState);
   }
 
   @override
@@ -188,10 +189,10 @@ class _$SplashInitialState implements SplashInitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashInitialState value) initial,
-    required TResult Function(SplashLoadingState value) loading,
-    required TResult Function(SplashLoadedState value) loaded,
-    required TResult Function(SplashErrorState value) error,
+    required TResult Function(StartupInitialState value) initial,
+    required TResult Function(StartupLoadingState value) loading,
+    required TResult Function(StartupLoadedState value) loaded,
+    required TResult Function(StartupErrorState value) error,
   }) {
     return initial(this);
   }
@@ -199,10 +200,10 @@ class _$SplashInitialState implements SplashInitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
   }) {
     return initial?.call(this);
   }
@@ -210,10 +211,10 @@ class _$SplashInitialState implements SplashInitialState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -223,43 +224,43 @@ class _$SplashInitialState implements SplashInitialState {
   }
 }
 
-abstract class SplashInitialState implements SplashStates {
-  const factory SplashInitialState() = _$SplashInitialState;
+abstract class StartupInitialState implements StartupStates {
+  const factory StartupInitialState() = _$StartupInitialState;
 }
 
 /// @nodoc
-abstract class $SplashLoadingStateCopyWith<$Res> {
-  factory $SplashLoadingStateCopyWith(
-          SplashLoadingState value, $Res Function(SplashLoadingState) then) =
-      _$SplashLoadingStateCopyWithImpl<$Res>;
+abstract class $StartupLoadingStateCopyWith<$Res> {
+  factory $StartupLoadingStateCopyWith(
+          StartupLoadingState value, $Res Function(StartupLoadingState) then) =
+      _$StartupLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SplashLoadingStateCopyWithImpl<$Res>
-    extends _$SplashStatesCopyWithImpl<$Res>
-    implements $SplashLoadingStateCopyWith<$Res> {
-  _$SplashLoadingStateCopyWithImpl(
-      SplashLoadingState _value, $Res Function(SplashLoadingState) _then)
-      : super(_value, (v) => _then(v as SplashLoadingState));
+class _$StartupLoadingStateCopyWithImpl<$Res>
+    extends _$StartupStatesCopyWithImpl<$Res>
+    implements $StartupLoadingStateCopyWith<$Res> {
+  _$StartupLoadingStateCopyWithImpl(
+      StartupLoadingState _value, $Res Function(StartupLoadingState) _then)
+      : super(_value, (v) => _then(v as StartupLoadingState));
 
   @override
-  SplashLoadingState get _value => super._value as SplashLoadingState;
+  StartupLoadingState get _value => super._value as StartupLoadingState;
 }
 
 /// @nodoc
 
-class _$SplashLoadingState implements SplashLoadingState {
-  const _$SplashLoadingState();
+class _$StartupLoadingState implements StartupLoadingState {
+  const _$StartupLoadingState();
 
   @override
   String toString() {
-    return 'SplashStates.loading()';
+    return 'StartupStates.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SplashLoadingState);
+        (other.runtimeType == runtimeType && other is StartupLoadingState);
   }
 
   @override
@@ -305,10 +306,10 @@ class _$SplashLoadingState implements SplashLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashInitialState value) initial,
-    required TResult Function(SplashLoadingState value) loading,
-    required TResult Function(SplashLoadedState value) loaded,
-    required TResult Function(SplashErrorState value) error,
+    required TResult Function(StartupInitialState value) initial,
+    required TResult Function(StartupLoadingState value) loading,
+    required TResult Function(StartupLoadedState value) loaded,
+    required TResult Function(StartupErrorState value) error,
   }) {
     return loading(this);
   }
@@ -316,10 +317,10 @@ class _$SplashLoadingState implements SplashLoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -327,10 +328,10 @@ class _$SplashLoadingState implements SplashLoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -340,43 +341,43 @@ class _$SplashLoadingState implements SplashLoadingState {
   }
 }
 
-abstract class SplashLoadingState implements SplashStates {
-  const factory SplashLoadingState() = _$SplashLoadingState;
+abstract class StartupLoadingState implements StartupStates {
+  const factory StartupLoadingState() = _$StartupLoadingState;
 }
 
 /// @nodoc
-abstract class $SplashLoadedStateCopyWith<$Res> {
-  factory $SplashLoadedStateCopyWith(
-          SplashLoadedState value, $Res Function(SplashLoadedState) then) =
-      _$SplashLoadedStateCopyWithImpl<$Res>;
+abstract class $StartupLoadedStateCopyWith<$Res> {
+  factory $StartupLoadedStateCopyWith(
+          StartupLoadedState value, $Res Function(StartupLoadedState) then) =
+      _$StartupLoadedStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SplashLoadedStateCopyWithImpl<$Res>
-    extends _$SplashStatesCopyWithImpl<$Res>
-    implements $SplashLoadedStateCopyWith<$Res> {
-  _$SplashLoadedStateCopyWithImpl(
-      SplashLoadedState _value, $Res Function(SplashLoadedState) _then)
-      : super(_value, (v) => _then(v as SplashLoadedState));
+class _$StartupLoadedStateCopyWithImpl<$Res>
+    extends _$StartupStatesCopyWithImpl<$Res>
+    implements $StartupLoadedStateCopyWith<$Res> {
+  _$StartupLoadedStateCopyWithImpl(
+      StartupLoadedState _value, $Res Function(StartupLoadedState) _then)
+      : super(_value, (v) => _then(v as StartupLoadedState));
 
   @override
-  SplashLoadedState get _value => super._value as SplashLoadedState;
+  StartupLoadedState get _value => super._value as StartupLoadedState;
 }
 
 /// @nodoc
 
-class _$SplashLoadedState implements SplashLoadedState {
-  const _$SplashLoadedState();
+class _$StartupLoadedState implements StartupLoadedState {
+  const _$StartupLoadedState();
 
   @override
   String toString() {
-    return 'SplashStates.loaded()';
+    return 'StartupStates.loaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SplashLoadedState);
+        (other.runtimeType == runtimeType && other is StartupLoadedState);
   }
 
   @override
@@ -422,10 +423,10 @@ class _$SplashLoadedState implements SplashLoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashInitialState value) initial,
-    required TResult Function(SplashLoadingState value) loading,
-    required TResult Function(SplashLoadedState value) loaded,
-    required TResult Function(SplashErrorState value) error,
+    required TResult Function(StartupInitialState value) initial,
+    required TResult Function(StartupLoadingState value) loading,
+    required TResult Function(StartupLoadedState value) loaded,
+    required TResult Function(StartupErrorState value) error,
   }) {
     return loaded(this);
   }
@@ -433,10 +434,10 @@ class _$SplashLoadedState implements SplashLoadedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -444,10 +445,10 @@ class _$SplashLoadedState implements SplashLoadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -457,34 +458,34 @@ class _$SplashLoadedState implements SplashLoadedState {
   }
 }
 
-abstract class SplashLoadedState implements SplashStates {
-  const factory SplashLoadedState() = _$SplashLoadedState;
+abstract class StartupLoadedState implements StartupStates {
+  const factory StartupLoadedState() = _$StartupLoadedState;
 }
 
 /// @nodoc
-abstract class $SplashErrorStateCopyWith<$Res> {
-  factory $SplashErrorStateCopyWith(
-          SplashErrorState value, $Res Function(SplashErrorState) then) =
-      _$SplashErrorStateCopyWithImpl<$Res>;
+abstract class $StartupErrorStateCopyWith<$Res> {
+  factory $StartupErrorStateCopyWith(
+          StartupErrorState value, $Res Function(StartupErrorState) then) =
+      _$StartupErrorStateCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class _$SplashErrorStateCopyWithImpl<$Res>
-    extends _$SplashStatesCopyWithImpl<$Res>
-    implements $SplashErrorStateCopyWith<$Res> {
-  _$SplashErrorStateCopyWithImpl(
-      SplashErrorState _value, $Res Function(SplashErrorState) _then)
-      : super(_value, (v) => _then(v as SplashErrorState));
+class _$StartupErrorStateCopyWithImpl<$Res>
+    extends _$StartupStatesCopyWithImpl<$Res>
+    implements $StartupErrorStateCopyWith<$Res> {
+  _$StartupErrorStateCopyWithImpl(
+      StartupErrorState _value, $Res Function(StartupErrorState) _then)
+      : super(_value, (v) => _then(v as StartupErrorState));
 
   @override
-  SplashErrorState get _value => super._value as SplashErrorState;
+  StartupErrorState get _value => super._value as StartupErrorState;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(SplashErrorState(
+    return _then(StartupErrorState(
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -495,22 +496,22 @@ class _$SplashErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SplashErrorState implements SplashErrorState {
-  const _$SplashErrorState({required this.error});
+class _$StartupErrorState implements StartupErrorState {
+  const _$StartupErrorState({required this.error});
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'SplashStates.error(error: $error)';
+    return 'StartupStates.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SplashErrorState &&
+            other is StartupErrorState &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -520,8 +521,8 @@ class _$SplashErrorState implements SplashErrorState {
 
   @JsonKey(ignore: true)
   @override
-  $SplashErrorStateCopyWith<SplashErrorState> get copyWith =>
-      _$SplashErrorStateCopyWithImpl<SplashErrorState>(this, _$identity);
+  $StartupErrorStateCopyWith<StartupErrorState> get copyWith =>
+      _$StartupErrorStateCopyWithImpl<StartupErrorState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -563,10 +564,10 @@ class _$SplashErrorState implements SplashErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashInitialState value) initial,
-    required TResult Function(SplashLoadingState value) loading,
-    required TResult Function(SplashLoadedState value) loaded,
-    required TResult Function(SplashErrorState value) error,
+    required TResult Function(StartupInitialState value) initial,
+    required TResult Function(StartupLoadingState value) loading,
+    required TResult Function(StartupLoadedState value) loaded,
+    required TResult Function(StartupErrorState value) error,
   }) {
     return error(this);
   }
@@ -574,10 +575,10 @@ class _$SplashErrorState implements SplashErrorState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
   }) {
     return error?.call(this);
   }
@@ -585,10 +586,10 @@ class _$SplashErrorState implements SplashErrorState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashInitialState value)? initial,
-    TResult Function(SplashLoadingState value)? loading,
-    TResult Function(SplashLoadedState value)? loaded,
-    TResult Function(SplashErrorState value)? error,
+    TResult Function(StartupInitialState value)? initial,
+    TResult Function(StartupLoadingState value)? loading,
+    TResult Function(StartupLoadedState value)? loaded,
+    TResult Function(StartupErrorState value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -598,11 +599,12 @@ class _$SplashErrorState implements SplashErrorState {
   }
 }
 
-abstract class SplashErrorState implements SplashStates {
-  const factory SplashErrorState({required String error}) = _$SplashErrorState;
+abstract class StartupErrorState implements StartupStates {
+  const factory StartupErrorState({required String error}) =
+      _$StartupErrorState;
 
   String get error;
   @JsonKey(ignore: true)
-  $SplashErrorStateCopyWith<SplashErrorState> get copyWith =>
+  $StartupErrorStateCopyWith<StartupErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

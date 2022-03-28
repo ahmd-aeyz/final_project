@@ -43,7 +43,7 @@ dependencies:
   dartz: ^0.10.1
   #injectable: for injection
   injectable: ^1.5.3
-  #flutter_native_splash: for using native splash screen
+  #flutter_native_splash: for using native startup screen
   flutter_native_splash: ^2.1.1
 
 dev_dependencies:

@@ -10,15 +10,18 @@ pattern the main use case in this repo are
 
 ## Using these plugins in this project
 
-retrofit: source code generator that uses Dio as an http client 
-dio: http client 
-flutter_bloc: state management with freezed 
-equatable: makes comparing dart objects 
-intl: to format date 
-json_annotation: to use json serialize annotation
-freezed_annotation: to use freezed annotation 
-get_it & injectable: for dependency injection
-connectivity_plus: internet connection 
-shared_preferences: save local cached data 
-dartz: for handle return type with Either 
-flutter_native_splash: to show image in the native white screen
+- retrofit: source code generator that uses Dio as an http client 
+- dio: http client 
+- flutter_bloc: state management with freezed 
+- equatable: makes comparing dart objects 
+- intl: to format date 
+- json_annotation: to use json serialize annotation
+- freezed_annotation: to use freezed annotation 
+- get_it & injectable: for dependency injection
+- connectivity_plus: internet connection 
+- shared_preferences: save local cached data 
+- dartz: for handle return type with Either 
+- flutter_native_splash: to show image in the native white screen
+
+## Note 
+* The API server use the local host (sometimes not available)
