@@ -23,5 +23,9 @@ pattern the main use case in this repo are
 - dartz: for handle return type with Either 
 - flutter_native_splash: to show image in the native white screen
 
+## API Repo Link
+- https://github.com/MohamedSaad0/jobs_project
+- the backend was developed with laravel 
+
 ## Note 
-* The API server use the local host (sometimes not available)
+* The application has not been deployed yet
